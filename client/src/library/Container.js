@@ -1,3 +1,5 @@
-export const Container = ({ children }) => {
-   return <div className="px-4">{children}</div>;
+import { cn } from "@/utils/cn";
+
+export const Container = ({ children, className }) => {
+   return <div className={cn(["px-4", className])}>{children}</div>;
 };
