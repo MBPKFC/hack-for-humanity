@@ -1,5 +1,10 @@
-import '@/styles/globals.css'
+import { StepContextProvider } from "@/context/StepContext";
+import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <StepContextProvider>
+      <Component {...pageProps} />
+    </StepContextProvider>
+  );
 }
