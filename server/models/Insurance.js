@@ -8,6 +8,12 @@ const insuranceSchema = new Schema({
   type: {
     type: String,
   },
+  hasPCP: {
+    type: Boolean,
+  },
+  hasEmailed: {
+    type: Boolean,
+  },
 });
 
 module.exports = insuranceSchema;

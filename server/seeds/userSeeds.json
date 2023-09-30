@@ -7,7 +7,9 @@
     "zip": 33414,
     "insurance": {
       "provider": "Test Provider",
-      "type": "Test Type"
+      "type": "Test Type",
+      "hasPCP": false,
+      "hasEmailed": true
     }
   },
   {
