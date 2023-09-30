@@ -1,4 +1,5 @@
 export const createUser = (userData) => {
+  console.log("Create User");
   return fetch(`${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users`, {
     method: "POST",
     headers: {
@@ -9,8 +10,21 @@ export const createUser = (userData) => {
 };
 
 export const getSingleUser = (userData) => {
-    console.log("api test")
-  return fetch(`${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users/${userData.id}`, {
+  console.log("Get Single User");
+  return fetch(
+    `${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users/${userData.id}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+};
+
+export const getAllUsers = () => {
+  console.log("Get All Users");
+  return fetch(`${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users/`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

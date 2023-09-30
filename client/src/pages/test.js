@@ -1,4 +1,4 @@
-import { getSingleUser, createUser } from "../utils/API";
+import { getSingleUser, createUser, getAllUsers } from "../utils/API";
 
 export default function Home() {
   // example fetch of how to get a single user
@@ -53,6 +53,23 @@ export default function Home() {
     }
   };
 
+  // example fetch of how to get all users
+  const handleGetAllUsers = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await getAllUsers();
+      if (!res.ok) {
+        throw new Error("something went wrong!");
+      }
+
+      const users = await res.json();
+      console.log(users);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <main>
       <div>
@@ -65,6 +82,12 @@ export default function Home() {
         {/* example form submit create user */}
         <form onSubmit={handleCreateUser}>
           <button type="submit">Create User</button>
+        </form>
+      </div>
+      <div>
+        {/* example form submit get all users */}
+        <form onSubmit={handleGetAllUsers}>
+          <button type="submit">Get All Users</button>
         </form>
       </div>
     </main>
