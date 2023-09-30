@@ -33,10 +33,36 @@ module.exports = {
   },
 
   // create user
-  // example input can be found in server/seeds/userSeeds.json
+  // example body can be found in server/seeds/userSeeds.json
   async createUser(req, res) {
     try {
       const dbUserData = await User.create(req.body);
+      res.json(dbUserData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  },
+
+  // update a user
+  // example body can be found in server/seeds/userSeeds.json
+  async updateSingleUser(req, res) {
+    try {
+      const dbUserData = await User.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $set: req.body,
+        },
+        {
+          runValidators: true,
+          new: true,
+        }
+      );
+
+      if (!dbUserData) {
+        return res.status(404).json({ message: 'No user with this id!' });
+      }
+
       res.json(dbUserData);
     } catch (err) {
       console.log(err);
