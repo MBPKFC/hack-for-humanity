@@ -36,7 +36,7 @@ module.exports = {
   // example body can be found in server/seeds/userSeeds.json
   async createUser(req, res) {
     try {
-      const dbUserData = await User.create(req.body).select("-__v");
+      const dbUserData = await User.create(req.body);
       res.json(dbUserData);
     } catch (err) {
       console.log(err);
@@ -57,7 +57,7 @@ module.exports = {
           runValidators: true,
           new: true,
         }
-      ).select("-__v");
+      );
 
       if (!dbUserData) {
         return res.status(404).json({ message: "No user with this id!" });
