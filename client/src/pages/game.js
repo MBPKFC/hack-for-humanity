@@ -2,6 +2,7 @@ import Question from "@/components/Question";
 import Answer from "@/components/Answer";
 import { StepContext } from "@/context/StepContext";
 import React, { useContext, useState } from "react";
+import Progress from "../components/Progress";
 
 export default function Game() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -11,6 +12,7 @@ export default function Game() {
 
   return (
     <div className="bg-brand-tan h-screen">
+      <Progress />
       {!showAnswer ? (
         <Question
           setIsAnswerCorrect={setIsAnswerCorrect}
