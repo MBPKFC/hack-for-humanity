@@ -1,9 +1,9 @@
 import { Container } from "@/library/Container";
 
-export default function Home() {
+export const Content = () => {
    return (
       <Container>
-         <div className="text-xl">Home page</div>
+         <div>Content</div>
       </Container>
    )
-}
+};
