@@ -34,8 +34,8 @@ const Answer = ({ setShowAnswer }) => {
     return (
         <div className="max-w-md flex flex-col gap-2 mx-auto pt-4">
             <div>
-                <p className="font-bold text-2xl text-center">{isAnswerCorrect ? `Correct!` : `Not Quite.`}</p>
-                <p>{questions[currentStep].additionalInfo}</p>
+                <p className="font-bold text-2xl text-center mb-4">{isAnswerCorrect ? `Correct!` : `Not Quite.`}</p>
+                <p className="mb-4">{questions[currentStep].additionalInfo}</p>
             </div>
             <div className="flex justify-center">
                 {isFinalQuestion
