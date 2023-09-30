@@ -4,15 +4,23 @@ const insuranceSchema = require('./Insurance');
 
 const userSchema = new Schema(
   {
+    fullName: {
+      type: String,
+    },
     email: {
       type: String,
-      required: true,
       unique: true,
       match: [/.+@.+\..+/, 'Must use a valid email address'],
     },
-    gender: {},
-    age: {},
-    zip: {},
+    gender: {
+      type: String,
+    },
+    age: {
+      type: Number,
+    },
+    zip: {
+      type: Number,
+    },
     // set insurance to be an object of data that adheres to the insuranceSchema
     insurance: insuranceSchema,
   },
