@@ -1,0 +1,28 @@
+{
+  "name": "hack-for-humanity",
+  "version": "1.0.0",
+  "description": "acs hack for humanity project at tech hub event",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd client && npm run start",
+    "server": "cd server && npm run start",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "seed": "cd server && npm run seed",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MBPKFC/hack-for-humanity.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MBPKFC/hack-for-humanity/issues"
+  },
+  "homepage": "https://github.com/MBPKFC/hack-for-humanity#readme",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
