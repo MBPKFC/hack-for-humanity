@@ -1,0 +1,24 @@
+[
+  {
+    "fullName": "Test Test",
+    "email": "test@test.com",
+    "gender": "Male",
+    "age": 21,
+    "zip": 33414,
+    "insurance": {
+      "provider": "Test Provider",
+      "type": "Test Type",
+      "hasPCP": false,
+      "hasEmailed": true
+    }
+  },
+  {
+    "email": "mateo@wallace.com",
+    "gender": "Male",
+    "age": 21,
+    "zip": 33414
+  },
+  {
+    "zip": 33414
+  }
+]

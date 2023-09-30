@@ -5,9 +5,9 @@
   "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "cd client && npm run start",
-    "server": "cd server && npm run start",
-    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run watch",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
     "seed": "cd server && npm run seed",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build"
