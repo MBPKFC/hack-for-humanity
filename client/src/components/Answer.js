@@ -31,16 +31,15 @@ const Answer = ({ setShowAnswer }) => {
     // }, []);
 
     return (
-        <div>
+        <div className="max-w-md flex flex-col gap-2 mx-auto pt-4">
             <div>
-                <p>{isAnswerCorrect ? `Correct` : `Incorrect`}</p>
+                <p className="font-bold text-2xl text-center">{isAnswerCorrect ? `Correct!` : `Not Quite.`}</p>
                 <p>{questions[currentStep].additionalInfo}</p>
             </div>
-            <div>
+            <div className="flex justify-center">
                 {isFinalQuestion
-                    ? (<button>Game Summary</button>)
-                    : (<button onClick={incrementStep}>Next Question</button>)}
-                <p>Learn more!</p>
+                    ? (<button className="">Game Summary</button>)
+                    : (<button className="bg-brand-blue text-white font-bold rounded-full py-2 px-6" onClick={incrementStep}>Next Question</button>)}
             </div>
         </div>
     )
