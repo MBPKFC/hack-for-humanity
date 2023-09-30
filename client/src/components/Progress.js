@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
-import { Circle, CheckCircle } from "@phosphor-icons/react";
 import { StepContext } from "@/context/StepContext";
-import Container from "../library/Container";
-import questions from "@/data/questions";
+import questions from "@/data/questions.json";
 
 const Progress = () => {
   const { currentStep } = useContext(StepContext);
