@@ -3,6 +3,7 @@ import Answer from "@/components/Answer";
 import { StepContext } from "@/context/StepContext";
 import React, { useContext, useState } from "react";
 import Progress from "../components/Progress";
+import { Container } from "@/library/Container";
 
 export default function Game() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -11,7 +12,7 @@ export default function Game() {
   console.log(isAnswerCorrect);
 
   return (
-    <div className="bg-brand-tan h-screen">
+    <Container>
       <Progress />
       {!showAnswer ? (
         <Question
@@ -22,6 +23,6 @@ export default function Game() {
         // <div>Your answer is {isAnswerCorrect? 'correct! 😁' : 'incorrect! 😢'}</div>
         <Answer setShowAnswer={setShowAnswer}/>
       )}
-    </div>
+    </Container>
   );
 }
