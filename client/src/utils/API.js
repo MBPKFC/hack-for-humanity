@@ -31,3 +31,17 @@ export const getAllUsers = () => {
     },
   });
 };
+
+export const updateSingleUser = (userData) => {
+  console.log("Update Single User");
+  return fetch(
+    `${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users/${userData.id}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    }
+  );
+};
