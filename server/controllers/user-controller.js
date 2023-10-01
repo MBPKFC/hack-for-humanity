@@ -90,7 +90,28 @@ module.exports = {
         }
       });
 
-      res.json({ zipCount, providerCount, totalUsers: allUsers.length });
+      const ag = await User.aggregate([
+        {
+          $group: {
+            _id: "$zip",
+            count: { $sum: 1 },
+          },
+        },
+        {
+          $sort: { count: -1 },
+        },
+        {
+          $limit: 1,
+        },
+      ]);
+
+      res.json({
+        zipCount,
+        providerCount,
+        totalUsers: allUsers.length,
+        topZip: ag[0]._id,
+        // topProvider,
+      });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
