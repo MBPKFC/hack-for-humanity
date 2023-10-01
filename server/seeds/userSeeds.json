@@ -13,12 +13,29 @@
     }
   },
   {
-    "email": "mateo@wallace.com",
+    "fullName": "Jest Jest",
+    "email": "Jest@Jest.com",
     "gender": "Male",
     "age": 21,
-    "zip": 33414
+    "zip": 33414,
+    "insurance": {
+      "provider": "Humana",
+      "type": "Test Type",
+      "hasPCP": false,
+      "hasEmailed": true
+    }
   },
   {
-    "zip": 33414
+    "fullName": "Test Test",
+    "email": "test@test.com",
+    "gender": "Male",
+    "age": 21,
+    "zip": 33414,
+    "insurance": {
+      "provider": "Humana",
+      "type": "Test Type",
+      "hasPCP": false,
+      "hasEmailed": true
+    }
   }
 ]
