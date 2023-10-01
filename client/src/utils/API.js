@@ -11,15 +11,12 @@ export const createUser = (userData) => {
 
 export const getSingleUser = (userData) => {
   console.log("Get Single User");
-  return fetch(
-    `${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users/${userData.id}`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  return fetch(`${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users/${userData.id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 };
 
 export const getAllUsers = () => {
@@ -34,14 +31,11 @@ export const getAllUsers = () => {
 
 export const updateSingleUser = (userData) => {
   console.log("Update Single User");
-  return fetch(
-    `${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users/${userData.id}`,
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-    }
-  );
+  return fetch(`${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users/${userData.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  });
 };

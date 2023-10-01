@@ -1,5 +1,5 @@
-import { StepContext } from "@/context/StepContext";
 import React, { useContext } from "react";
+import { StepContext } from "@/context/StepContext";
 
 const AnswerChoice = ({ text, setShowAnswer, isCorrect }) => {
   const { setIsAnswerCorrect } = useContext(StepContext);
@@ -12,8 +12,7 @@ const AnswerChoice = ({ text, setShowAnswer, isCorrect }) => {
   return (
     <button
       onClick={handleClick}
-      className="bg-white border-2 border-brand-blue hover:bg-brand-blue hover:text-white transition-colors duration-200 rounded-full py-2 block font-medium w-full"
-    >
+      className="block w-full rounded-full border-2 border-brand-blue bg-white py-2 font-medium transition-colors duration-200 hover:bg-brand-blue hover:text-white">
       {text}
     </button>
   );
