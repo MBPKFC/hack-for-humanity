@@ -21,7 +21,9 @@ const Progress = () => {
             <div className="flex justify-center items-center rounded-full font-bold h-6 w-6 text-xs bg-brand-blue text-white ">
               {index + 1}
             </div>
+            {index !== questions.length - 1 && (
             <span className="self-center h-[2px] w-4 bg-brand-blue"></span>
+            )}
           </>
         );
       })}

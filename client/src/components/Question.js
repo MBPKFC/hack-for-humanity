@@ -1,21 +1,34 @@
 import React, { useContext } from "react";
 import AnswerChoice from "./AnswerChoice";
 import { StepContext } from "../context/StepContext";
+import questions from "../data/questions.json";
 
-const questions = [
-  {
-    questionText:
-      "What is the recommended age at which individuals should start getting regular colon cancer screenings?",
-    answerOptions: [
-      { answerText: "Blah", isCorrect: false },
-      { answerText: "Bloop", isCorrect: false },
-      { answerText: "Bleep", isCorrect: false },
-      { answerText: "Blah Blah", isCorrect: true },
-    ],
-    hint: "Hint 1",
-    additionalInfo: "Additional Info 1",
-  },
-];
+// const questions = [
+//   {
+//     questionText:
+//       "What is the recommended age at which individuals should start getting regular colon cancer screenings?",
+//     answerOptions: [
+//       { answerText: "Blah", isCorrect: false },
+//       { answerText: "Bloop", isCorrect: false },
+//       { answerText: "Bleep", isCorrect: false },
+//       { answerText: "Blah Blah", isCorrect: true },
+//     ],
+//     hint: "Hint 1",
+//     additionalInfo: "Additional Info 1",
+//   },
+//   {
+//     questionText:
+//       "This is the second question!",
+//     answerOptions: [
+//       { answerText: "Yes!", isCorrect: false },
+//       { answerText: "No!", isCorrect: false },
+//       { answerText: "Maybe!", isCorrect: false },
+//       { answerText: "Wrong!", isCorrect: true },
+//     ],
+//     hint: "Hint 2",
+//     additionalInfo: "Additional Info 2",
+//   }
+// ];
 
 const Question = ({ setShowAnswer }) => {
   const { currentStep } = useContext(StepContext);
