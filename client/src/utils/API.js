@@ -1,5 +1,4 @@
 export const createUser = (userData) => {
-  console.log("Create User");
   return fetch(`${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users`, {
     method: "POST",
     headers: {
@@ -10,7 +9,6 @@ export const createUser = (userData) => {
 };
 
 export const getSingleUser = (userData) => {
-  console.log("Get Single User");
   return fetch(`${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users/${userData.id}`, {
     method: "GET",
     headers: {
@@ -20,7 +18,6 @@ export const getSingleUser = (userData) => {
 };
 
 export const getAllUsers = () => {
-  console.log("Get All Users");
   return fetch(`${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users/`, {
     method: "GET",
     headers: {
@@ -30,7 +27,6 @@ export const getAllUsers = () => {
 };
 
 export const updateSingleUser = (userData) => {
-  console.log("Update Single User");
   return fetch(`${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users/${userData.id}`, {
     method: "PUT",
     headers: {

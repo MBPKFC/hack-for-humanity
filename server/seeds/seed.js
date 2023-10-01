@@ -10,12 +10,10 @@ db.once("open", async () => {
     await User.create(userSeeds);
     const userData = await User.find();
 
-    console.log(`Seeded ${userData.length} users`);
   } catch (err) {
     console.error(err);
     process.exit(1);
   }
-
-  console.log("all done!");
+  
   process.exit(0);
 });

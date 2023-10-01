@@ -27,7 +27,7 @@ export default function screening() {
 
   const router = useRouter();
 
-  const handleSubmitClick = () => {
+  const handleSubmitClick = async () => {
     if (userData.insurancePlan === "No Insurance") {
       setUserData({ ...userData, insuranceType: "None" });
     }

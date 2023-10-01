@@ -29,7 +29,6 @@ const Answer = ({ setShowAnswer }) => {
 
   function incrementStep() {
     if (isFinalQuestion) {
-      console.log("There are no more questions!");
       return;
     } else {
       setCurrentStep(currentStep + 1);

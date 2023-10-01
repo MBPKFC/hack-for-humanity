@@ -15,7 +15,6 @@ export default function Home() {
       }
 
       const user = await res.json();
-      console.log(user);
     } catch (err) {
       console.error(err);
     }
@@ -47,7 +46,6 @@ export default function Home() {
       }
 
       const user = await res.json();
-      console.log(user);
     } catch (err) {
       console.error(err);
     }
@@ -64,7 +62,6 @@ export default function Home() {
       }
 
       const users = await res.json();
-      console.log(users);
     } catch (err) {
       console.error(err);
     }
@@ -99,7 +96,6 @@ export default function Home() {
       }
 
       const user = await res.json();
-      console.log(user);
     } catch (err) {
       console.error(err);
     }

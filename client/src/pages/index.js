@@ -20,7 +20,6 @@ export default function Home() {
       }
 
       const user = await res.json();
-      console.log(user);
       localStorage.setItem("userId", user.id);
     } catch (err) {
       console.error(err);
