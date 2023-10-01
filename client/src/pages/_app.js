@@ -1,5 +1,5 @@
 import { Open_Sans } from "next/font/google";
-import { Header } from "@/components";
+import { Header } from "@/components/Header";
 import { StepContextProvider } from "@/context/StepContext";
 import "@/styles/globals.css";
 
