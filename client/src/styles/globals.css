@@ -1,3 +1,8 @@
 @tailwind base;
+@layer base {
+   body {
+      @apply bg-brand-tan;
+   }
+}
 @tailwind components;
 @tailwind utilities;
