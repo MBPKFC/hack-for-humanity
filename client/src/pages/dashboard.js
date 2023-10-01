@@ -37,9 +37,9 @@ export default function dashboard() {
 
             <div className='flex flex-col sm:flex-row gap-4 pt-4'>
                 <DashboardCard icon={<User size={48} weight='duotone' color="#b0b0b0" />} title='Daily Sessions' count='2312' percentChange={0.12} />
-                <DashboardCard icon={<MapTrifold size={48} weight='duotone' color="#b0b0b0" />} title='Top ZIP Code' count={data?.topZip ? data.topZip : '-'} />
-                <DashboardCard icon={<MapTrifold size={48} weight='duotone' color="#b0b0b0" />} title='Top ZIP Code' count={data?.topZip ? data.topZip : '-'} />
-                <DashboardCard title='Top ZIP Code' count={data?.topZip ? data.topZip : '-'} />
+                <DashboardCard icon={<MapTrifold size={48} weight='duotone' color="#b0b0b0" />} title='Top ZIP Code' count={data?.topZip.zip ? data.topZip.zip : '-'} />
+                {/* <DashboardCard icon={<MapTrifold size={48} weight='duotone' color="#b0b0b0" />} title='Top ZIP Code' count={data?.topZip.zip ? data.topZip.zip : '-'} />
+                <DashboardCard title='Top ZIP Code' count={data?.topZip.zip ? data.topZip.zip : '-'} /> */}
             </div>
 
 
