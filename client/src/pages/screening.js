@@ -34,7 +34,7 @@ export default function screening() {
     //Make API call here
 
     //Redirect to results page
-    router.push("/results");
+    router.push("/providers");
   };
 
   useEffect(() => {

@@ -53,7 +53,7 @@ const Answer = ({ setShowAnswer }) => {
       <div>
         <p className="mb-6 text-center text-2xl font-bold">{headline}</p>
 
-        <p className="mb-4 mt-8 rounded-md bg-white p-4 shadow-md">
+        <p className="mb-4 mt-8 rounded-md bg-white p-4 shadow-md text-lg">
           {questions[currentStep].additionalInfo}
         </p>
       </div>
