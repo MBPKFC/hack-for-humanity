@@ -52,8 +52,8 @@ export default function screening() {
           <span>Find a Provider Near You</span>
         </div>
         {step === 2 && (
-          <div className="flex items-center text-sm shadow-md bg-green-50 text-green-900 p-2 rounded-md">
-            <NavigationArrow size={16} className="mr-2" />
+          <div className="flex items-center text-sm font-medium shadow-md bg-green-50 text-green-900 p-2 rounded-md">
+            <NavigationArrow size={20} weight="bold" className="mr-2" />
             Great! We found {providerCount} providers near your.</div>
         )}
         <div className="bg-white p-4 rounded-md shadow-md mb-4 flex flex-col gap-4">
@@ -144,6 +144,6 @@ export default function screening() {
           </div>
         </div>
       </div>
-    </Container>
+    </Container >
   );
 }

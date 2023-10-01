@@ -11,9 +11,6 @@ const correctAnswerHeadline = ["That's correct! Great job!",
 
 const incorrectAnswerHeadline = ["Nope, that's not it!", "Hmmm, not quite.", "Uh-oh, that's not right.", "Sorry, that's not the correct answer.", "Sorry, better luck next question."];
 
-// const gameOverText =
-//   "You've taken a huge step in caring your yourself by learning about health screenings that could save your life when cancer is detected early. If you're ready, find a PCP doctor near you.";
-
 const Answer = ({ setShowAnswer }) => {
 
   const { currentStep, setCurrentStep, isAnswerCorrect } =
@@ -43,11 +40,6 @@ const Answer = ({ setShowAnswer }) => {
     setHeadline(getRandomResponseHeadline());
   }, [isAnswerCorrect, currentStep])
 
-  // useEffect(() => {
-  //     setRandomCorrectText(correctOptions[Math.floor(Math.random() * correctOptions.length)]);
-  //     setRandomIncorrectText(incorrectOptions[Math.floor(Math.random() * incorrectOptions.length)]);
-  // }, []);
-
   return (
     <div className="max-w-md flex flex-col gap-2 mx-auto pt-4">
       <div>
@@ -75,21 +67,6 @@ const Answer = ({ setShowAnswer }) => {
           </button>
         )}
       </div>
-      {/* {isFinalQuestion 
-            ? (<div>
-                <p>Congratulations</p>
-                <p>{gameOverText}</p>
-                <div>
-                    <button></button>
-                </div>
-            </div>) 
-            : (<div>
-                <p className="font-bold text-2xl text-center">{isAnswerCorrect ? `Correct!` : `Not Quite.`}</p>
-                <p>{questions[currentStep].additionalInfo}</p>
-                <div>
-                    <button className="bg-brand-blue text-white font-bold rounded-full py-2 px-6" onClick={incrementStep}>Next Question</button>
-                </div>
-            </div>)} */}
     </div>
   );
 };
