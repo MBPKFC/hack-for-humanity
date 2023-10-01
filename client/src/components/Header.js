@@ -11,14 +11,7 @@ export const Header = () => {
       <Link href="/">
         <Image src="/acs-logo.svg" alt="American Cancer Society Logo" width={80} height={80} />
       </Link>
-      <Image
-        src="/images/img-6456-photo-room-11.png"
-        alt="hero mascot"
-        width={0}
-        height={0}
-        sizes="100vw"
-        className={cn(["max-h-11 w-min", { hidden: router.route === "/" }])}
-      />
+      <img src="/images/img-6456-photo-room-11.png" className={cn(["max-h-11 w-auto", { hidden: router.route === "/" }])} />
     </div>
   );
 };
