@@ -13,12 +13,8 @@ const Answer = ({ setShowAnswer }) => {
   const [randomCorrectText, setRandomCorrectText] = useState();
   const [randomIncorrectText, setRandomIncorrectText] = useState();
 
-<<<<<<< HEAD
-  const { currentStep, setCurrentStep, isAnswerCorrect } = useContext(StepContext);
-=======
   const { currentStep, setCurrentStep, isAnswerCorrect } =
     useContext(StepContext);
->>>>>>> screening
   // console.log(currentStep);
   const isFinalQuestion = currentStep === questions.length - 1;
 
@@ -51,24 +47,15 @@ const Answer = ({ setShowAnswer }) => {
         {isFinalQuestion ? (
           <Link
             href="/summary"
-<<<<<<< HEAD
-            className="rounded-full bg-brand-blue px-6 py-2 font-bold text-white">
-=======
             className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold rounded-full py-2"
           >
->>>>>>> screening
             Go To Summary
           </Link>
         ) : (
           <button
-<<<<<<< HEAD
-            className="rounded-full bg-brand-blue px-6 py-2 font-bold text-white"
-            onClick={incrementStep}>
-=======
             className="w-full border-2 border-brand-blue hover:border-brand-blue-dark bg-brand-blue  hover:bg-brand-blue-dark text-white font-bold rounded-full py-2"
             onClick={incrementStep}
           >
->>>>>>> screening
             Next Question
           </button>
         )}
