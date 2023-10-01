@@ -57,7 +57,17 @@ export default function Providers () {
                     {!listView &&
                         (
                             <div>
-                                <p>Google Map View</p>
+                                <div className="rounded-md my-4">
+                                    <img className="rounded-md" src="https://www.google.com/maps/d/thumbnail?mid=1y4n7xZTmr8B3sDp674AeoQdtyU4"></img>
+                                </div>
+                                <div>
+                                    <ProviderCard 
+                                    name={dataObjects[0].name}
+                                    address={dataObjects[0].address}
+                                    contact={dataObjects[0].contact}
+                                    distance={dataObjects[0].distance}
+                                    ></ProviderCard>
+                                </div>
                             </div>
                         )}
                 </div>
