@@ -41,8 +41,8 @@ export default function Providers () {
                 <div>
                     <h1 className="text-2xl font-bold pt-4 pb-2">Providers Near You</h1>
                     <div>
-                        <button onClick={handlesetListView} className={`bg-white p-4 ${listView && 'bg-gray-100 border border-black'}`}>List View</button>
-                        <button onClick={handlesetListView} className={`bg-white p-4 ${!listView && 'bg-gray-100 border border-black'}`}>Map View</button>
+                        <button onClick={handlesetListView} className={`bg-white p-3 mr-2 rounded-md ${listView && 'bg-gray-100 border border-black'}`}>List View</button>
+                        <button onClick={handlesetListView} className={`bg-white p-3 rounded-md ${!listView && 'bg-gray-100 border border-black'}`}>Map View</button>
                     </div>
                 </div>
                 <div>
