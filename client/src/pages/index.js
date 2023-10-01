@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/library/Button";
 import { Container } from "@/library/Container";
+import Answer from '@/components/Answer'
 
 export default function Home() {
   return (
