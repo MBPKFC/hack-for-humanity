@@ -13,7 +13,8 @@ const Answer = ({ setShowAnswer }) => {
   const [randomCorrectText, setRandomCorrectText] = useState();
   const [randomIncorrectText, setRandomIncorrectText] = useState();
 
-  const { currentStep, setCurrentStep, isAnswerCorrect } = useContext(StepContext);
+  const { currentStep, setCurrentStep, isAnswerCorrect } =
+    useContext(StepContext);
   // console.log(currentStep);
   const isFinalQuestion = currentStep === questions.length - 1;
 
@@ -33,12 +34,12 @@ const Answer = ({ setShowAnswer }) => {
   // }, []);
 
   return (
-    <div className="mx-auto flex max-w-md flex-col gap-2 pt-4">
+    <div className="max-w-md flex flex-col gap-2 mx-auto pt-4">
       <div>
-        <p className="mb-4 text-center text-2xl font-bold">
+        <p className="font-bold text-2xl text-center mb-4">
           {isAnswerCorrect ? `Correct!` : `Not Quite.`}
         </p>
-        <p className="mb-4 rounded-md bg-white p-4 shadow-sm">
+        <p className="bg-white p-4 rounded-md shadow-md mb-4">
           {questions[currentStep].additionalInfo}
         </p>
       </div>
@@ -46,13 +47,15 @@ const Answer = ({ setShowAnswer }) => {
         {isFinalQuestion ? (
           <Link
             href="/summary"
-            className="rounded-full bg-brand-blue px-6 py-2 font-bold text-white">
+            className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-bold rounded-full py-2 text-center"
+          >
             Go To Summary
           </Link>
         ) : (
           <button
-            className="rounded-full bg-brand-blue px-6 py-2 font-bold text-white"
-            onClick={incrementStep}>
+            className="w-full border-2 border-brand-blue hover:border-brand-blue-dark bg-brand-blue  hover:bg-brand-blue-dark text-white font-bold rounded-full py-2"
+            onClick={incrementStep}
+          >
             Next Question
           </button>
         )}
