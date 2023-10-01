@@ -5,7 +5,7 @@ import questions from "@/data/questions.json";
 const Progress = () => {
   const { currentStep } = useContext(StepContext);
   return (
-    <div className="flex justify-center py-2">
+    <div className="flex justify-center py-4">
       {questions.map((question, index) => {
         return index > currentStep ? (
           <>

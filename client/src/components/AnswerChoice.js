@@ -12,7 +12,7 @@ const AnswerChoice = ({ text, setShowAnswer, isCorrect }) => {
   return (
     <button
       onClick={handleClick}
-      className="bg-white border-2 border-brand-blue hover:bg-brand-blue hover:text-white transition-colors duration-200 rounded-full py-2 block font-medium w-full"
+      className="bg-white border-2 border-brand-blue hover:bg-brand-blue hover:text-white transition-colors duration-200 rounded-full py-2 block font-bold w-full"
     >
       {text}
     </button>
