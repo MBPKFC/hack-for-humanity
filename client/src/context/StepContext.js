@@ -1,4 +1,6 @@
 import { createContext, useState } from "react";
+import questions from "../data/questionsShort.json";
+
 
 export const StepContext = createContext();
 
@@ -13,6 +15,7 @@ export const StepContextProvider = (props) => {
     setIsAnswerCorrect,
     score,
     setScore,
+    questions
   };
   const { Provider } = StepContext;
 
