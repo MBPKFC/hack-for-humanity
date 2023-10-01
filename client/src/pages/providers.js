@@ -25,7 +25,15 @@ const dataObjects = [
 
 export default function Providers () {
 
-    const [view, setView] = useState('List');
+    const [listView, setListView] = useState(true);
+
+    function handlesetListView(){
+        if(listView === true){
+            setListView(false);
+        } else {
+            setListView(true);
+        }
+    };
 
     return (
         <Container className="bg-brand-tan h-screen">
@@ -33,12 +41,12 @@ export default function Providers () {
                 <div>
                     <h1 className="text-2xl font-bold pt-4 pb-2">Providers Near You</h1>
                     <div>
-                        <button>List View</button>
-                        <button>Map View</button>
+                        <button onClick={handlesetListView} className={`bg-white p-4 ${listView && 'bg-gray-100 border border-black'}`}>List View</button>
+                        <button onClick={handlesetListView} className={`bg-white p-4 ${!listView && 'bg-gray-100 border border-black'}`}>Map View</button>
                     </div>
                 </div>
                 <div>
-                    {view === 'List' && 
+                    {listView && 
                         (<div>
                             {dataObjects.map((object, index) => {
                             return (
@@ -46,7 +54,7 @@ export default function Providers () {
                             )
                         })}
                     </div>)}
-                    {view === 'Map' &&
+                    {!listView &&
                         (
                             <div>
                                 <p>Google Map View</p>
