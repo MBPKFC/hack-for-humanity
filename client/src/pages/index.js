@@ -53,14 +53,14 @@ export default function Home() {
       <Button onClick={(e) => clickHandler(e, "game")} className="mt-6 w-full md:w-2/4">
         Play
       </Button>
-      <p className="mt-6">Sponsored by</p>
+      <p className="mt-6 mb-4">Sponsored by</p>
       <Image
         src="/images/american-cancer-society-logo-1.png"
         alt="american cancer society logo"
         width={0}
         height={0}
         sizes="100vw"
-        className="h-auto w-1/2 md:w-1/3"
+        className="h-auto w-1/4 md:w-1/3"
       />
     </Container>
   );
