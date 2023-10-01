@@ -20,7 +20,7 @@ export default function Home() {
          <h3 className="text-lg text-center mt-6 max-w-[280px]">
             Learn about health screenings and win prizes.
          </h3>
-         <Button onClick={handleClick} className="w-full mt-6">
+         <Button className="w-full mt-6">
             Play
          </Button>
          <p className="mt-6">Sponsored by</p>
