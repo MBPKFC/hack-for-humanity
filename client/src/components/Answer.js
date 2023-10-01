@@ -3,18 +3,23 @@ import Link from "next/link";
 import { StepContext } from "@/context/StepContext";
 import questions from "../data/questions.json";
 
-const correctOptions = ["Correct!", "You're a genius!"];
-const incorrectOptions = ["Practice makes perfect.", "That was a tough one."];
+const correctAnswerHeadline = ["That's correct! Great job!",
+  "You got it! Well done!",
+  "Absolutely right! Impressive!",
+  "You're on fire! That's the correct answer!",
+  "Bingo! You nailed it!"];
 
-const gameOverText =
-  "You've taken a huge step in caring your yourself by learning about health screenings that could save your life when cancer is detected early. If you're ready, find a PCP doctor near you.";
+const incorrectAnswerHeadline = ["Nope, that's not it!", "Hmmm, not quite.", "Uh-oh, that's not right.", "Sorry, that's not the correct answer.", "Sorry, better luck next question."];
+
+// const gameOverText =
+//   "You've taken a huge step in caring your yourself by learning about health screenings that could save your life when cancer is detected early. If you're ready, find a PCP doctor near you.";
 
 const Answer = ({ setShowAnswer }) => {
-  const [randomCorrectText, setRandomCorrectText] = useState();
-  const [randomIncorrectText, setRandomIncorrectText] = useState();
 
-  const { currentStep, setCurrentStep, isAnswerCorrect } = useContext(StepContext);
-  // console.log(currentStep);
+  const { currentStep, setCurrentStep, isAnswerCorrect } =
+    useContext(StepContext);
+  const [headline, setHeadline] = useState('');
+
   const isFinalQuestion = currentStep === questions.length - 1;
 
   function incrementStep() {
@@ -27,18 +32,29 @@ const Answer = ({ setShowAnswer }) => {
     }
   }
 
+  const getRandomResponseHeadline = () => {
+    const randomIndex = Math.floor(Math.random() * 5);
+    if (isAnswerCorrect) {
+      return correctAnswerHeadline[randomIndex];
+    } else return incorrectAnswerHeadline[randomIndex];
+  };
+
+  useEffect(() => {
+    setHeadline(getRandomResponseHeadline());
+  }, [isAnswerCorrect, currentStep])
+
   // useEffect(() => {
   //     setRandomCorrectText(correctOptions[Math.floor(Math.random() * correctOptions.length)]);
   //     setRandomIncorrectText(incorrectOptions[Math.floor(Math.random() * incorrectOptions.length)]);
   // }, []);
 
   return (
-    <div className="mx-auto flex max-w-md flex-col gap-2 pt-4">
+    <div className="max-w-md flex flex-col gap-2 mx-auto pt-4">
       <div>
-        <p className="mb-4 text-center text-2xl font-bold">
-          {isAnswerCorrect ? `Correct!` : `Not Quite.`}
+        <p className="font-bold text-2xl text-center mb-4">
+          {headline}
         </p>
-        <p className="mb-4 rounded-md bg-white p-4 shadow-sm">
+        <p className="bg-white p-4 rounded-md shadow-md mb-4">
           {questions[currentStep].additionalInfo}
         </p>
       </div>
@@ -46,13 +62,15 @@ const Answer = ({ setShowAnswer }) => {
         {isFinalQuestion ? (
           <Link
             href="/summary"
-            className="rounded-full bg-brand-blue px-6 py-2 font-bold text-white">
+            className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-bold rounded-full py-2 text-center"
+          >
             Go To Summary
           </Link>
         ) : (
           <button
-            className="rounded-full bg-brand-blue px-6 py-2 font-bold text-white"
-            onClick={incrementStep}>
+            className="w-full border-2 border-brand-blue hover:border-brand-blue-dark bg-brand-blue  hover:bg-brand-blue-dark text-white font-bold rounded-full py-2"
+            onClick={incrementStep}
+          >
             Next Question
           </button>
         )}
