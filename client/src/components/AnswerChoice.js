@@ -7,7 +7,6 @@ const AnswerChoice = ({ text, setShowAnswer, isCorrect }) => {
   const handleClick = () => {
     setShowAnswer(true);
     setIsAnswerCorrect(isCorrect);
-    console.log("clicked");
   };
   return (
     <button
