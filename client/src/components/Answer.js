@@ -41,7 +41,7 @@ const Answer = ({ setShowAnswer }) => {
             </div>
             <div className="flex justify-center">
                 {isFinalQuestion
-                    ? (<Link href="/" className="bg-brand-blue text-white font-bold rounded-full py-2 px-6">Go To Summary</Link>)
+                    ? (<Link href="/summary" className="bg-brand-blue text-white font-bold rounded-full py-2 px-6">Go To Summary</Link>)
                     : (<button className="bg-brand-blue text-white font-bold rounded-full py-2 px-6" onClick={incrementStep}>Next Question</button>)}
             </div>
             {/* {isFinalQuestion 
