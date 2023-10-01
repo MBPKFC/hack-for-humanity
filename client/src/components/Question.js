@@ -34,8 +34,8 @@ const Question = ({ setShowAnswer }) => {
   const { currentStep } = useContext(StepContext);
 
   return (
-    <div className="mx-auto flex max-w-md flex-col gap-2 pt-4">
-      <div className="mb-4 rounded-md bg-white p-4 shadow-sm">
+    <div className="max-w-md flex flex-col gap-2 mx-auto pt-4">
+      <div className="bg-white p-4 rounded-md shadow-md mb-4">
         {questions[currentStep].questionText}
       </div>
       <div className="flex flex-col gap-4">
