@@ -58,7 +58,7 @@ export default function screening() {
       console.error(err);
     }
     //Redirect to results page
-    // router.push("/providers");
+    await router.push("/providers");
   };
 
   return (
