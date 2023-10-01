@@ -3,19 +3,23 @@ import Link from "next/link";
 import { StepContext } from "@/context/StepContext";
 import questions from "../data/questions.json";
 
-const correctOptions = ["Correct!", "You're a genius!"];
-const incorrectOptions = ["Practice makes perfect.", "That was a tough one."];
+const correctAnswerHeadline = ["That's correct! Great job!",
+  "You got it! Well done!",
+  "Absolutely right! Impressive!",
+  "You're on fire! That's the correct answer!",
+  "Bingo! You nailed it!"];
 
-const gameOverText =
-  "You've taken a huge step in caring your yourself by learning about health screenings that could save your life when cancer is detected early. If you're ready, find a PCP doctor near you.";
+const incorrectAnswerHeadline = ["Nope, that's not it!", "Hmmm, not quite.", "Uh-oh, that's not right.", "Sorry, that's not the correct answer.", "Sorry, better luck next question."];
+
+// const gameOverText =
+//   "You've taken a huge step in caring your yourself by learning about health screenings that could save your life when cancer is detected early. If you're ready, find a PCP doctor near you.";
 
 const Answer = ({ setShowAnswer }) => {
-  const [randomCorrectText, setRandomCorrectText] = useState();
-  const [randomIncorrectText, setRandomIncorrectText] = useState();
 
   const { currentStep, setCurrentStep, isAnswerCorrect } =
     useContext(StepContext);
-  // console.log(currentStep);
+  const [headline, setHeadline] = useState('');
+
   const isFinalQuestion = currentStep === questions.length - 1;
 
   function incrementStep() {
@@ -28,6 +32,17 @@ const Answer = ({ setShowAnswer }) => {
     }
   }
 
+  const getRandomResponseHeadline = () => {
+    const randomIndex = Math.floor(Math.random() * 5);
+    if (isAnswerCorrect) {
+      return correctAnswerHeadline[randomIndex];
+    } else return incorrectAnswerHeadline[randomIndex];
+  };
+
+  useEffect(() => {
+    setHeadline(getRandomResponseHeadline());
+  }, [isAnswerCorrect, currentStep])
+
   // useEffect(() => {
   //     setRandomCorrectText(correctOptions[Math.floor(Math.random() * correctOptions.length)]);
   //     setRandomIncorrectText(incorrectOptions[Math.floor(Math.random() * incorrectOptions.length)]);
@@ -37,7 +52,7 @@ const Answer = ({ setShowAnswer }) => {
     <div className="max-w-md flex flex-col gap-2 mx-auto pt-4">
       <div>
         <p className="font-bold text-2xl text-center mb-4">
-          {isAnswerCorrect ? `Correct!` : `Not Quite.`}
+          {headline}
         </p>
         <p className="bg-white p-4 rounded-md shadow-md mb-4">
           {questions[currentStep].additionalInfo}

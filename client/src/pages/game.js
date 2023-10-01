@@ -7,9 +7,7 @@ import Progress from "../components/Progress";
 
 export default function Game() {
   const [showAnswer, setShowAnswer] = useState(false);
-  const { isAnswerCorrect, setIsAnswerCorrect } = useContext(StepContext);
-
-  console.log(isAnswerCorrect);
+  const { setIsAnswerCorrect } = useContext(StepContext);
 
   return (
     <Container className="h-screen">
