@@ -39,3 +39,13 @@ export const updateSingleUser = (userData) => {
     body: JSON.stringify(userData),
   });
 };
+
+export const getVIPData = () => {
+  console.log("Get VIP Data");
+  return fetch(`${process.env.NEXT_PUBLIC_APIENDPOINT}/api/users/data`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+};
