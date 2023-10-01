@@ -1,9 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { StepContext } from "@/context/StepContext";
-import { cn } from "@/utils/cn";
-import questions from "../data/questions.json";
 
 const correctAnswerHeadline = [
   "That's correct! Great job!",
@@ -22,7 +19,7 @@ const incorrectAnswerHeadline = [
 ];
 
 const Answer = ({ setShowAnswer }) => {
-  const { currentStep, setCurrentStep, isAnswerCorrect } = useContext(StepContext);
+  const { currentStep, setCurrentStep, isAnswerCorrect, questions } = useContext(StepContext);
   const [headline, setHeadline] = useState("");
 
   const isFinalQuestion = currentStep === questions.length - 1;
@@ -52,7 +49,7 @@ const Answer = ({ setShowAnswer }) => {
       <div>
         <p className="mb-6 text-center text-2xl font-bold">{headline}</p>
 
-        <p className="mb-4 mt-8 rounded-md bg-white p-4 shadow-md text-lg">
+        <p className="mb-4 mt-8 rounded-md bg-white p-4 text-lg shadow-md">
           {questions[currentStep].additionalInfo}
         </p>
       </div>
