@@ -1,7 +1,7 @@
 {
   "name": "hack-for-humanity",
   "version": "1.0.0",
-  "description": "acs hack for humanity project at tech hub event",
+  "description": "acs hack for humanity project at tech hub",
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
