@@ -4,7 +4,6 @@ import { StepContext } from "@/context/StepContext";
 import { Container } from "@/library/Container";
 import React, { useContext, useState } from "react";
 import Progress from "../components/Progress";
-import { Container } from "@/library/Container";
 
 export default function Game() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -14,6 +13,7 @@ export default function Game() {
 
   return (
     <Container className="bg-brand-tan h-screen">
+      <Progress/>
       {!showAnswer ? (
         <Question
           setIsAnswerCorrect={setIsAnswerCorrect}
