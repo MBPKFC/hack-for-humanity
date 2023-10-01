@@ -68,9 +68,9 @@ export default function screening() {
   }, [userData])
 
   return (
-    <Container className="">
-      <div className="max-w-md flex flex-col gap-2 mx-auto pt-4">
-        <div className="flex gap-3 items-center text-3xl font-bold mb-4 ">
+    <Container className="pt-4">
+      <div className="max-w-md flex flex-col gap-2 mx-auto">
+        <div className="flex gap-3 items-center text-2xl font-bold mb-4 ">
           <span className="bg-white p-2 rounded-full">
             <Stethoscope size={32} />
           </span>
