@@ -12,10 +12,7 @@ export default function screening() {
     insuranceType: "PPO",
   });
 
-  console.log(userData);
-
   const handleInsuranceChange = (value) => {
-    console.log("this is working", value);
     setUserData({ ...userData, insurancePlan: value }); // Fixed: Changed insuranceType to insurancePlan
   };
 
@@ -26,8 +23,6 @@ export default function screening() {
   const handleBackClick = () => {
     setStep(step - 1);
   };
-
-  console.log("step", step);
 
   const router = useRouter();
 
