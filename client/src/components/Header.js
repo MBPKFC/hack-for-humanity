@@ -1,13 +1,10 @@
-import { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { StepContext } from "@/context/StepContext";
 import { cn } from "@/utils/cn";
 
 export const Header = () => {
   const router = useRouter();
-  console.log("router: ", router.route);
 
   return (
     <div className="flex justify-between bg-brand-blue px-4 py-2 text-white">

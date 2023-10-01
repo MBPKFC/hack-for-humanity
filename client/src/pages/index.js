@@ -35,8 +35,8 @@ export default function Home() {
   return (
     <Container className="flex flex-col items-center justify-between font-semibold">
       <div className="mb-12 mt-6 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">ScreenSmart:</h1>
-        <h2 className="text-lg md:text-xl">Your path to Better Health</h2>
+        <h1 className="text-4xl font-bold sm:text-5xl">ScreenSmart:</h1>
+        <h2 className="text-lg sm:text-xl">Your path to Better Health</h2>
       </div>
       <Image
         src="/images/img-6456-photo-room-11.png"
@@ -52,14 +52,14 @@ export default function Home() {
       <Button onClick={(e) => clickHandler(e, "game")} className="mt-6 w-full md:w-2/4">
         Play
       </Button>
-      <p className="mt-6 mb-4">Sponsored by</p>
+      <p className="mb-4 mt-6">Sponsored by</p>
       <Image
         src="/images/american-cancer-society-logo-1.png"
         alt="american cancer society logo"
         width={0}
         height={0}
         sizes="100vw"
-        className="h-auto w-1/4 md:w-1/3"
+        className="h-auto w-1/4"
       />
     </Container>
   );
