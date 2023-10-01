@@ -65,4 +65,52 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+
+  async getVIPData(req, res) {
+    try {
+      const allUsers = await User.find().select("-__v");
+
+      const zipCount = {};
+      const providerCount = {};
+
+      allUsers.forEach((ele) => {
+        if (zipCount[ele.zip]) {
+          zipCount[ele.zip] += 1;
+        } else {
+          zipCount[ele.zip] = 1;
+        }
+        if (providerCount[ele.insurance.provider]) {
+          providerCount[ele.insurance.provider] += 1;
+        } else {
+          providerCount[ele.insurance.provider] = 1;
+        }
+      });
+
+      const ag = await User.aggregate([
+        {
+          $group: {
+            _id: "$zip",
+            count: { $sum: 1 },
+          },
+        },
+        {
+          $sort: { count: -1 },
+        },
+        {
+          $limit: 1,
+        },
+      ]);
+
+      res.json({
+        zipCount,
+        providerCount,
+        totalUsers: allUsers.length,
+        topZip: ag[0]._id,
+        // topProvider,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  },
 };
