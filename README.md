@@ -47,7 +47,7 @@
 
 <div align="center">
   <br />
-  <img src="https://i.imgur.com/H2p0Lvw.gif" alt="gif of game being played">
+  <img src="./client/public/images/deployed.gif" alt="gif of game being played" height="380">
   <br />
   <br />
 </div>
