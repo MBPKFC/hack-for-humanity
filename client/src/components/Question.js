@@ -35,7 +35,7 @@ const Question = ({ setShowAnswer }) => {
 
   return (
     <div className="max-w-md flex flex-col gap-2 mx-auto pt-4">
-      <div className="bg-white p-4 rounded-md shadow-md mb-4">
+      <div className="bg-white p-4 rounded-md shadow-md mb-4 text-lg">
         {questions[currentStep].questionText}
       </div>
       <div className="flex flex-col gap-4">

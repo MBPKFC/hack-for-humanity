@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "@/library/Container";
-import { Stethoscope } from "@phosphor-icons/react";
+import { NavigationArrow, Stethoscope } from "@phosphor-icons/react";
 import insurances from "@/data/insurances.json";
 import { useRouter } from "next/router";
 
@@ -11,6 +11,7 @@ export default function screening() {
     insurancePlan: "AARP",
     insuranceType: "PPO",
   });
+  const [providerCount, setProviderCount] = useState(0);
 
   const handleInsuranceChange = (value) => {
     setUserData({ ...userData, insurancePlan: value }); // Fixed: Changed insuranceType to insurancePlan
@@ -33,8 +34,13 @@ export default function screening() {
     //Make API call here
 
     //Redirect to results page
-    router.push("/results");
+    router.push("/providers");
   };
+
+  useEffect(() => {
+
+    setProviderCount(Math.floor(Math.random() * 100))
+  }, [userData])
 
   return (
     <Container className="">
@@ -45,6 +51,11 @@ export default function screening() {
           </span>
           <span>Find a Provider Near You</span>
         </div>
+        {step === 2 && (
+          <div className="flex items-center text-sm font-medium shadow-md bg-green-50 text-green-900 p-2 rounded-md">
+            <NavigationArrow size={20} weight="bold" className="mr-2" />
+            Great! We found {providerCount} providers near your.</div>
+        )}
         <div className="bg-white p-4 rounded-md shadow-md mb-4 flex flex-col gap-4">
           {step === 1 && (
             <>
@@ -64,7 +75,7 @@ export default function screening() {
             <>
               <p className="font-bold">Which insurance plan do you have?</p>
               <select
-              value={userData.insurancePlan}
+                value={userData.insurancePlan}
                 onChange={(e) => handleInsuranceChange(e.target.value)}
                 className="border border-gray-300 rounded-md p-2"
               >
@@ -122,7 +133,7 @@ export default function screening() {
             ) : null}
 
             {(step === 2 && userData?.insurancePlan === "No Insurance") ||
-            step === 3 ? (
+              step === 3 ? (
               <button
                 className="w-full border-2 border-brand-blue hover:border-brand-blue-dark bg-brand-blue  hover:bg-brand-blue-dark text-white font-bold rounded-full py-2"
                 onClick={handleSubmitClick}
@@ -133,6 +144,6 @@ export default function screening() {
           </div>
         </div>
       </div>
-    </Container>
+    </Container >
   );
 }

@@ -1,24 +1,29 @@
 import React, { useContext, useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { StepContext } from "@/context/StepContext";
+import { cn } from "@/utils/cn";
 import questions from "../data/questions.json";
 
-const correctAnswerHeadline = ["That's correct! Great job!",
+const correctAnswerHeadline = [
+  "That's correct! Great job!",
   "You got it! Well done!",
   "Absolutely right! Impressive!",
   "You're on fire! That's the correct answer!",
-  "Bingo! You nailed it!"];
+  "Bingo! You nailed it!",
+];
 
-const incorrectAnswerHeadline = ["Nope, that's not it!", "Hmmm, not quite.", "Uh-oh, that's not right.", "Sorry, that's not the correct answer.", "Sorry, better luck next question."];
-
-// const gameOverText =
-//   "You've taken a huge step in caring your yourself by learning about health screenings that could save your life when cancer is detected early. If you're ready, find a PCP doctor near you.";
+const incorrectAnswerHeadline = [
+  "Nope, that's not it!",
+  "Hmmm, not quite.",
+  "Uh-oh, that's not right.",
+  "Sorry, that's not the correct answer.",
+  "Sorry, better luck next question.",
+];
 
 const Answer = ({ setShowAnswer }) => {
-
-  const { currentStep, setCurrentStep, isAnswerCorrect } =
-    useContext(StepContext);
-  const [headline, setHeadline] = useState('');
+  const { currentStep, setCurrentStep, isAnswerCorrect } = useContext(StepContext);
+  const [headline, setHeadline] = useState("");
 
   const isFinalQuestion = currentStep === questions.length - 1;
 
@@ -41,20 +46,14 @@ const Answer = ({ setShowAnswer }) => {
 
   useEffect(() => {
     setHeadline(getRandomResponseHeadline());
-  }, [isAnswerCorrect, currentStep])
-
-  // useEffect(() => {
-  //     setRandomCorrectText(correctOptions[Math.floor(Math.random() * correctOptions.length)]);
-  //     setRandomIncorrectText(incorrectOptions[Math.floor(Math.random() * incorrectOptions.length)]);
-  // }, []);
+  }, [isAnswerCorrect, currentStep]);
 
   return (
-    <div className="max-w-md flex flex-col gap-2 mx-auto pt-4">
+    <div className="mx-auto flex max-w-md flex-col gap-2 pt-4">
       <div>
-        <p className="font-bold text-2xl text-center mb-4">
-          {headline}
-        </p>
-        <p className="bg-white p-4 rounded-md shadow-md mb-4">
+        <p className="mb-6 text-center text-2xl font-bold">{headline}</p>
+
+        <p className="mb-4 mt-8 rounded-md bg-white p-4 shadow-md text-lg">
           {questions[currentStep].additionalInfo}
         </p>
       </div>
@@ -62,34 +61,17 @@ const Answer = ({ setShowAnswer }) => {
         {isFinalQuestion ? (
           <Link
             href="/summary"
-            className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-bold rounded-full py-2 text-center"
-          >
+            className="hover:bg-brand-blue-dark w-full rounded-full bg-brand-blue py-2 text-center font-bold text-white">
             Go To Summary
           </Link>
         ) : (
           <button
-            className="w-full border-2 border-brand-blue hover:border-brand-blue-dark bg-brand-blue  hover:bg-brand-blue-dark text-white font-bold rounded-full py-2"
-            onClick={incrementStep}
-          >
+            className="hover:border-brand-blue-dark hover:bg-brand-blue-dark w-full rounded-full border-2  border-brand-blue bg-brand-blue py-2 font-bold text-white"
+            onClick={incrementStep}>
             Next Question
           </button>
         )}
       </div>
-      {/* {isFinalQuestion 
-            ? (<div>
-                <p>Congratulations</p>
-                <p>{gameOverText}</p>
-                <div>
-                    <button></button>
-                </div>
-            </div>) 
-            : (<div>
-                <p className="font-bold text-2xl text-center">{isAnswerCorrect ? `Correct!` : `Not Quite.`}</p>
-                <p>{questions[currentStep].additionalInfo}</p>
-                <div>
-                    <button className="bg-brand-blue text-white font-bold rounded-full py-2 px-6" onClick={incrementStep}>Next Question</button>
-                </div>
-            </div>)} */}
     </div>
   );
 };
