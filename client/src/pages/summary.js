@@ -21,7 +21,7 @@ export default function Summary() {
   return (
     <Container className="bg-brand-tan h-screen">
       <div className="max-w-md flex flex-col gap-2 mx-auto pt-4">
-        <div className={cn(['p-2 font-medium rounded-md shadow-sm text-sm',
+        <div className={cn(['p-2 font-medium rounded-md shadow-md text-sm',
           { 'bg-red-50  text-red-500': score <= 4 },
           { 'bg-amber-50  text-amber-600': score >= 5 && score <= 7 },
           { 'bg-green-50  text-green-600': score >= 8 }
