@@ -1,23 +1,22 @@
+import React, { useContext, useState } from "react";
+import Answer from "@/components/Answer";
 import Question from "@/components/Question";
 import { StepContext } from "@/context/StepContext";
-import React, { useContext, useState } from "react";
+import { Container } from "@/library/Container";
+import Progress from "../components/Progress";
 
 export default function Game() {
   const [showAnswer, setShowAnswer] = useState(false);
-  const { isAnswerCorrect, setIsAnswerCorrect } = useContext(StepContext);
-
-  console.log(isAnswerCorrect);
+  const { setIsAnswerCorrect } = useContext(StepContext);
 
   return (
-    <div className="bg-brand-tan h-screen">
+    <Container className="h-screen">
+      <Progress />
       {!showAnswer ? (
-        <Question
-          setIsAnswerCorrect={setIsAnswerCorrect}
-          setShowAnswer={setShowAnswer}
-        />
+        <Question setIsAnswerCorrect={setIsAnswerCorrect} setShowAnswer={setShowAnswer} />
       ) : (
-        <div>Your answer is {isAnswerCorrect? 'correct! 😁' : 'incorrect! 😢'}</div>
+        <Answer setShowAnswer={setShowAnswer} />
       )}
-    </div>
+    </Container>
   );
 }

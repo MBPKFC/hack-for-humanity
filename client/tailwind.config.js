@@ -16,6 +16,8 @@ module.exports = {
          colors: {
             "brand-tan": "#FFEED5",
             "brand-blue": "#0E25F2",
+            "brand-blue-dark": "#1025c3",
+            "brand-blue-light": "#d7e9ff",
           },
       },
    },

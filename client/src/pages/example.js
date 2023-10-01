@@ -1,9 +1,4 @@
-import {
-  getSingleUser,
-  createUser,
-  getAllUsers,
-  updateSingleUser,
-} from "../utils/API";
+import { createUser, getAllUsers, getSingleUser, updateSingleUser } from "../utils/API";
 
 export default function Home() {
   // example fetch of how to get a single user
@@ -20,7 +15,6 @@ export default function Home() {
       }
 
       const user = await res.json();
-      console.log(user);
     } catch (err) {
       console.error(err);
     }
@@ -52,7 +46,6 @@ export default function Home() {
       }
 
       const user = await res.json();
-      console.log(user);
     } catch (err) {
       console.error(err);
     }
@@ -69,7 +62,6 @@ export default function Home() {
       }
 
       const users = await res.json();
-      console.log(users);
     } catch (err) {
       console.error(err);
     }
@@ -104,7 +96,6 @@ export default function Home() {
       }
 
       const user = await res.json();
-      console.log(user);
     } catch (err) {
       console.error(err);
     }

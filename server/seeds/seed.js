@@ -9,13 +9,12 @@ db.once("open", async () => {
     // Creates Users
     await User.create(userSeeds);
     const userData = await User.find();
+    console.log(`${userData.length} entries added`)
 
-    console.log(`Seeded ${userData.length} users`);
   } catch (err) {
     console.error(err);
     process.exit(1);
   }
-
-  console.log("all done!");
+  
   process.exit(0);
 });

@@ -9,7 +9,6 @@ module.exports = {
 
       res.json(allUsers);
     } catch (err) {
-      console.log(err);
       res.status(500).json(err);
     }
   },
@@ -27,7 +26,6 @@ module.exports = {
 
       res.json(dbUserData);
     } catch (err) {
-      console.log(err);
       res.status(500).json(err);
     }
   },
@@ -39,7 +37,6 @@ module.exports = {
       const dbUserData = await User.create(req.body);
       res.json(dbUserData);
     } catch (err) {
-      console.log(err);
       res.status(500).json(err);
     }
   },
@@ -64,6 +61,32 @@ module.exports = {
       }
 
       res.json(dbUserData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  },
+
+  async getVIPData(req, res) {
+    try {
+      const allUsers = await User.find().select("-__v");
+
+      const ag = await User.aggregate([
+        {
+          $group: {
+            _id: "$zip",
+            count: { $sum: 1 },
+          },
+        },
+        {
+          $sort: { count: -1 },
+        },
+      ]);
+
+      res.json({
+        totalUsers: allUsers.length,
+        topZip: {zip: ag[0]._id, count: ag[0].count},
+        zipCount: ag,
+      });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
