@@ -14,7 +14,7 @@ const DashboardCard = ({ title, count, percentChange, icon }) => {
             </div>
             <div className='flex items-end justify-between'>
                 <span className='text-6xl font-bold'>{count}</span>
-                {icon}
+                {icon ? icon : null}
             </div>
 
         </div>
