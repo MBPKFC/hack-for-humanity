@@ -9,20 +9,20 @@ const Progress = () => {
       {questions.map((question, index) => {
         return index > currentStep ? (
           <>
-            <div className="flex justify-center items-center rounded-full font-bold h-6 w-6 text-xs bg-white text-brand-blue border border-brand-blue">
+            <div className="flex h-6 w-6 items-center justify-center rounded-full border border-brand-blue bg-white text-xs font-bold text-brand-blue">
               {index + 1}
             </div>
             {index !== questions.length - 1 && (
-              <span className="self-center h-[2px] w-4 bg-brand-blue"></span>
+              <span className="h-[2px] w-4 self-center bg-brand-blue"></span>
             )}
           </>
         ) : (
           <>
-            <div className="flex justify-center items-center rounded-full font-bold h-6 w-6 text-xs bg-brand-blue text-white ">
+            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-blue text-xs font-bold text-white ">
               {index + 1}
             </div>
             {index !== questions.length - 1 && (
-            <span className="self-center h-[2px] w-4 bg-brand-blue"></span>
+              <span className="h-[2px] w-4 self-center bg-brand-blue"></span>
             )}
           </>
         );

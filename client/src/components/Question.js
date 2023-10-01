@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import AnswerChoice from "./AnswerChoice";
 import { StepContext } from "../context/StepContext";
 import questions from "../data/questions.json";
+import AnswerChoice from "./AnswerChoice";
 
 // const questions = [
 //   {
@@ -34,8 +34,8 @@ const Question = ({ setShowAnswer }) => {
   const { currentStep } = useContext(StepContext);
 
   return (
-    <div className="max-w-md flex flex-col gap-2 mx-auto pt-4">
-      <div className="bg-white p-4 rounded-md shadow-sm mb-4">
+    <div className="mx-auto flex max-w-md flex-col gap-2 pt-4">
+      <div className="mb-4 rounded-md bg-white p-4 shadow-sm">
         {questions[currentStep].questionText}
       </div>
       <div className="flex flex-col gap-4">
