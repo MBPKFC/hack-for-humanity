@@ -9,6 +9,7 @@ db.once("open", async () => {
     // Creates Users
     await User.create(userSeeds);
     const userData = await User.find();
+    console.log(`${userData.length} entries added`)
 
   } catch (err) {
     console.error(err);
