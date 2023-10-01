@@ -3,6 +3,7 @@ import { Container } from "@/library/Container";
 import { NavigationArrow, Stethoscope } from "@phosphor-icons/react";
 import insurances from "@/data/insurances.json";
 import { useRouter } from "next/router";
+import { updateSingleUser } from "../utils/API";
 
 export default function screening() {
   const [step, setStep] = useState(1);
@@ -27,12 +28,36 @@ export default function screening() {
 
   const router = useRouter();
 
-  const handleSubmitClick = async () => {
+  const handleSubmitClick = async (e) => {
+    e.preventDefault();
+
     if (userData.insurancePlan === "No Insurance") {
       setUserData({ ...userData, insuranceType: "None" });
     }
-    //Make API call here
 
+    //Make API call here
+    const userId = localStorage.getItem("userId");
+
+    if (!userId) return router.push("/providers");
+
+    try {
+      const res = await updateSingleUser({
+        id: userId,
+        zip: userData.zipCode,
+        insurance: {
+          provider: userData.insurancePlan,
+          type: userData.insuranceType,
+        },
+      });
+      if (!res.ok) {
+        throw new Error("something went wrong!");
+      }
+
+      const user = await res.json();
+      console.log(user);
+    } catch (err) {
+      console.error(err);
+    }
     //Redirect to results page
     await router.push("/providers");
   };
