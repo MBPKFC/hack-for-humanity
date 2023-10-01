@@ -47,7 +47,7 @@ const Answer = ({ setShowAnswer }) => {
         {isFinalQuestion ? (
           <Link
             href="/summary"
-            className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold rounded-full py-2"
+            className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-bold rounded-full py-2 text-center"
           >
             Go To Summary
           </Link>

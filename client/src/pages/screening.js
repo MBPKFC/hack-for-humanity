@@ -69,6 +69,7 @@ export default function screening() {
             <>
               <p className="font-bold">Which insurance plan do you have?</p>
               <select
+              value={userData.insurancePlan}
                 onChange={(e) => handleInsuranceChange(e.target.value)}
                 className="border border-gray-300 rounded-md p-2"
               >
