@@ -2,7 +2,6 @@ import ProviderCard from "@/components/ProviderCard";
 import { Container } from "@/library/Container";
 import { useState } from "react";
 import { Stethoscope } from "@phosphor-icons/react";
-import Slider from "react-slick";
 
 const dataObjects = [
     {
