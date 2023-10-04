@@ -83,6 +83,12 @@ In order to use ScreenSmart navigate to the website at [hack-for-humanity.vercel
 
 After completing the game portion you will be brought to some consumer data in order for the site to supply you with the best information possible. Once all info has been taken the site will provide you with PCP's (Primary Care Physicians) in your area that you can follow up with for a screening.
 
+### Links
+
+- Website: [hack-for-humanity.vercel.app/](https://hack-for-humanity.vercel.app/)
+- PowerPoint: [ScreenSmart PP](https://docs.google.com/presentation/d/1EDTuKrkyHXKrytq3KdPllrcy0zKvwFYMDo_sSz1O9Bs/edit#slide=id.p)
+- Figma: [ScreenSmart Design Sheet](https://www.figma.com/file/1PAsMeDjkdVVUnipmG51R4/Get-Screened-for-ACS?type=design&node-id=1-3&mode=design)
+
 <!-- INSTALLATION -->
 
 ## Installation
